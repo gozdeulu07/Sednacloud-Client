@@ -1,0 +1,78 @@
+<section class="vh-100 ">
+<div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+        <div class="card text-white" style="border-radius: 1rem; background-color: rgb(43, 48, 53);">
+          <div class="card-body p-5 text-center">
+            <div class="mb-md-5 mt-md-4 pb-5">
+              <h2 class="fw-bold mb-2 text-uppercase">Sign Up</h2>
+
+              <form [formGroup]="frm" (ngSubmit)="onSubmit()">       
+              <div class="row">
+                <div class="col-6">
+                <div data-mdb-input-init class="form-group form-outline form-white mb-4">
+                  <label for="name" class="form-label">Name *</label>
+                  <input type="text" id="name" formControlName="name" class="form-control form-control-lg" 
+                  placeholder="Name" [ngClass]="{'is-invalid': submitted && component.name.errors}"/>
+                  <div class="form-text form-text-color" *ngIf="submitted && component.name.errors?.required">Please don't leave your name blank.</div>
+                  <div class="form-text form-text-color" *ngIf="submitted && (component.name.errors?.maxlength || component.name.errors?.minlength)">Please write your name between 3 and 50 characters.</div>
+              </div>
+            </div>
+
+              <div class="col-6">
+              <div data-mdb-input-init class="form-group form-outline form-white mb-4">
+                <label for="surname" class="form-label">Surname *</label>
+                <input type="text" id="surname" formControlName="surname" class="form-control form-control-lg" 
+                placeholder="Surname" [ngClass]="{'is-invalid': submitted && component.surname.errors}"/>
+                <div class="form-text form-text-color" *ngIf="submitted && component.surname.errors?.required">Please don't leave your surname blank.</div>
+                <div class="form-text form-text-color" *ngIf="submitted && (component.surname.errors?.maxlength || component.surname.errors?.minlength)">Please write your surname between 3 and 50 characters.</div>
+            </div>
+          </div>
+              </div>
+              
+              <div data-mdb-input-init class="form-group form-outline form-white mb-4">
+                  <label for="username" class="form-label">Username *</label>
+                  <input type="text" id="username" formControlName="username" class="form-control form-control-lg" 
+                  placeholder="Usename" [ngClass]="{'is-invalid': submitted && component.username.errors}"/>
+                  <div class="form-text form-text-color" *ngIf="submitted && component.username.errors?.required">Please don't leave your user name blank.</div>
+                  <div class="form-text form-text-color" *ngIf="submitted && (component.username.errors?.maxlength || component.username.errors?.minlength)">Please write your user name between 3 and 50 characters.</div>
+              </div>
+
+              <div data-mdb-input-init class="form-group form-outline form-white mb-4">
+                  <label for="email" class="form-label">Email *</label>
+                  <input type="email" id="email" formControlName="email" class="form-control form-control-lg" 
+                  placeholder="Email" [ngClass]="{'is-invalid': submitted && component.email.errors}"/>
+                  <div class="form-text form-text-color" *ngIf="submitted && component.email.errors?.required">Please don't leave your email blank.</div>
+                  <div class="form-text form-text-color" *ngIf="submitted && component.email.errors?.email">Please use email format.</div>
+              </div>
+
+              <div data-mdb-input-init class="form-group form-outline form-white mb-4">
+                  <label for="password" class="form-label">New Password *</label>
+                  <input type="password" id="password" formControlName="password" class="form-control form-control-lg" 
+                  placeholder="New Password" [ngClass]="{'is-invalid': submitted && component.password.errors}"/>
+                  <div class="form-text form-text-color" *ngIf="submitted && component.password.errors?.required">Please don't leave your password blank.</div>
+                  <div class="form-text form-text-color" *ngIf="submitted && frm.hasError('notSame')">Passwords don't match.</div>
+                  <div class="form-text form-text-color" *ngIf="submitted && (component.password.errors?.maxlength || component.password.errors?.minlength)">Please write your password between 3 and 50 characters.</div>
+              </div>
+              
+              <div data-mdb-input-init class="form-group form-outline form-white mb-4">
+                  <label for="passwordConfirm" class="form-label">Confirm New Password *</label>
+                  <input type="password" id="passwordConfirm" formControlName="passwordConfirm" class="form-control form-control-lg" 
+                  placeholder="Confirm New Password" [ngClass]="{'is-invalid': submitted && component.passwordConfirm.errors}"/>
+                  <div class="form-text form-text-color" *ngIf="submitted && component.passwordConfirm.errors?.required">Please don't leave your Confirm Password blank.</div>
+                  <div class="form-text form-text-color" *ngIf="submitted && frm.hasError('notSame')">Passwords don't match.</div>
+                  <div class="form-text form-text-color" *ngIf="submitted && (component.passwordConfirm.errors?.maxlength || component.passwordConfirm.errors?.minlength)">Please write your Confirm Password between 3 and 50 characters.</div>
+              </div>
+              <button data-mdb-button-init data-mdb-ripple-init class="btn btn-outline-light btn-lg px-5" type="submit">Sign Up</button>
+              </form>
+
+            </div>
+            <div>
+              <p class="mb-0">You have an account? <a routerLink="../login" class="text-white-50 fw-bold">Login</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

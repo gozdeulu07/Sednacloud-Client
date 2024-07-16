@@ -1,0 +1,38 @@
+<section class="vh-100 ">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+            <div class="card text-white" style="border-radius: 1rem; background-color: rgb(43, 48, 53);">
+              <div class="card-body p-5 text-center">
+    
+                <div class=" mt-md-4 pb-5">
+                  <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
+    
+                  <div data-mdb-input-init class="form-group form-outline form-white mb-4">
+                      <label for="username" class="form-label">Username/Email</label>
+                      <input #txtUserNameOrEmail type="text" id="username" class="form-control form-control-lg" placeholder="Username/Email"/>
+                  </div>
+    
+                  <div data-mdb-input-init class="form-group form-outline form-white mb-4">
+                      <label for="password" class="form-label">Password</label>
+                      <input #txtPassword type="password" id="password" class="form-control form-control-lg" placeholder="Password"/>
+                  </div>
+                  
+                  <p class="small mb-3 pb-lg-2"><a class="text-white-50" routerLink="/password-reset">Forgot your password?</a></p>
+    
+                  <button data-mdb-button-init data-mdb-ripple-init class="btn btn-outline-light btn-lg px-5" 
+                  type="submit" (click)="login(txtUserNameOrEmail.value, txtPassword.value)">Login</button>
+    
+                </div>
+                
+                <div>
+                  <p class="mb-0">You don't have an account? <a routerLink="../register" class="text-white-50 fw-bold">Sign Up!</a></p>
+                </div>
+    
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+  </section>
