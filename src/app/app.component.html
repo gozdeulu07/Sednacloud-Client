@@ -1,0 +1,86 @@
+<!-- Navbar-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid justify-content-between">
+    <!-- Left elements -->
+    <div class="d-flex">
+      <!-- Brand -->
+      <a class="navbar-brand me-2 mb-1 d-flex align-items-center" href="#">
+        <b>SEDNACLOUD</b>
+      </a>
+
+      <!-- Search form -->
+      <form class="input-group w-auto my-auto d-none d-sm-flex">
+        <input autocomplete="off" type="search"  class="form-control rounded" placeholder="Search" style="min-width: 125px"/>
+        <span class="input-group-text border-0 d-none d-lg-flex"
+          ><i class="fas fa-search"></i
+        ></span>
+      </form>
+    </div>
+    <!-- Left elements -->
+
+    <!-- Center elements -->
+    <ul class="navbar-nav flex-row d-none d-md-flex">
+      <li class="nav-item me-3 me-lg-1 active">
+        <a class="nav-link" href="#">
+          <span><i class="fas fa-home fa-lg"></i></span>
+        </a>
+      </li>
+
+      <li class="nav-item me-3 me-lg-1">
+        <a class="nav-link" href="#">
+          <span><i class="fas fa-shopping-cart fa-lg"></i></span>
+          <span class="badge rounded-pill badge-notification bg-danger">999+</span>
+        </a>
+      </li>
+    </ul>
+    <!-- Center elements -->
+
+    <!-- Right elements -->
+    <ul class="navbar-nav flex-row">
+      <li class="nav-item me-3 me-lg-1">
+        <a class="nav-link d-sm-flex align-items-sm-center" href="#">
+          <strong class="d-none d-sm-block ms-1">Username</strong>
+        </a>
+      </li>
+      <li class="nav-item me-3 me-lg-1">
+        <a class="nav-link d-sm-flex align-items-sm-center" routerLink="admin">
+          <strong class="d-none d-sm-block ms-1">Admin</strong>
+        </a>
+      </li>
+      <li class="nav-item me-3 me-lg-1">
+        <a class="nav-link d-sm-flex align-items-sm-center" routerLink="login">
+          <strong class="d-none d-sm-block ms-1">Login</strong>
+          <span class="li-ico"><i class="fa-solid fa-right-to-bracket"></i></span>
+        </a>
+      </li>
+      <li class="nav-item me-3 me-lg-1">
+        <a class="nav-link d-sm-flex align-items-sm-center" routerLink="register">
+          <strong class="d-none d-sm-block ms-1">Sign Up</strong>
+          <span class="li-ico"><i class="fa-solid fa-user-plus"></i></span>
+        </a>
+      </li>
+      <li class="nav-item me-3 me-lg-1">
+        <a class="nav-link d-sm-flex align-items-sm-center" href="#">
+          <strong class="d-none d-sm-block ms-1">Logout</strong>
+          <span class="li-ico"><i class="fa-solid fa-right-from-bracket"></i></span>
+        </a>
+      </li>
+    </ul>
+    <!-- Right elements -->
+  </div>
+</nav>
+<!-- Navbar -->
+
+<!-- Main Content -->
+<div class="row">
+  <div class="col-md-1"></div>
+  <div class="col-md-10"><router-outlet></router-outlet></div>
+  <div class="col-md-1"></div>
+</div>
+
+<ngx-spinner size="medium" name="s1" type="ball-spin-clockwise-fade"
+  ><p style="color: white">Loading...</p></ngx-spinner
+>
+<ngx-spinner size="medium" name="s2" type="square-jelly-box"
+  ><p style="color: white">Loading...</p></ngx-spinner
+>
