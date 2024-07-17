@@ -37,32 +37,32 @@
 
     <!-- Right elements -->
     <ul class="navbar-nav flex-row">
-      <li class="nav-item me-3 me-lg-1">
-        <a class="nav-link d-sm-flex align-items-sm-center" href="#">
+      <!-- <li class="nav-item me-3 me-lg-1">
+        <a class="nav-link d-sm-flex align-items-sm-center" *ngIf="authService.isAuthenticated">
           <strong class="d-none d-sm-block ms-1">Username</strong>
         </a>
-      </li>
+      </li> -->
       <li class="nav-item me-3 me-lg-1">
         <a class="nav-link d-sm-flex align-items-sm-center" routerLink="admin">
           <strong class="d-none d-sm-block ms-1">Admin</strong>
         </a>
       </li>
       <li class="nav-item me-3 me-lg-1">
-        <a class="nav-link d-sm-flex align-items-sm-center" routerLink="login">
+        <a class="nav-link d-sm-flex align-items-sm-center" routerLink="login"  *ngIf="!authService.isAuthenticated">
           <strong class="d-none d-sm-block ms-1">Login</strong>
           <span class="li-ico"><i class="fa-solid fa-right-to-bracket"></i></span>
         </a>
       </li>
       <li class="nav-item me-3 me-lg-1">
-        <a class="nav-link d-sm-flex align-items-sm-center" routerLink="register">
+        <a class="nav-link d-sm-flex align-items-sm-center" routerLink="register" *ngIf="!authService.isAuthenticated">
           <strong class="d-none d-sm-block ms-1">Sign Up</strong>
           <span class="li-ico"><i class="fa-solid fa-user-plus"></i></span>
         </a>
       </li>
       <li class="nav-item me-3 me-lg-1">
-        <a class="nav-link d-sm-flex align-items-sm-center" href="#">
-          <strong class="d-none d-sm-block ms-1">Logout</strong>
-          <span class="li-ico"><i class="fa-solid fa-right-from-bracket"></i></span>
+        <a class="nav-link d-sm-flex align-items-sm-center" *ngIf="authService.isAuthenticated">
+          <strong style="cursor: pointer;" class="d-none d-sm-block ms-1" (click)="signOut()">Logout</strong>
+          <span class="li-ico"><i class="fa-solid fa-right-from-bracket" (click)="signOut()"></i></span>
         </a>
       </li>
     </ul>

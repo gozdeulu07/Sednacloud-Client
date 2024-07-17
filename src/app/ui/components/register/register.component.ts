@@ -76,16 +76,16 @@ export class RegisterComponent extends BaseComponent implements OnInit {
     this.submitted = true;
     user.phone = "0" + user.phone;
     debugger
-    this.showSpinner(SpinnerType.BallSpinClockwise);
+    this.showSpinner(SpinnerType.SquareJellyBox);
 
     if (this.frm.invalid) {
-      this.hideSpinner(SpinnerType.BallSpinClockwise);
+      this.hideSpinner(SpinnerType.SquareJellyBox);
       return;
     }
 
     const resault: Create_User = await this.userService.create(user);
     if (resault.success) {
-      this.hideSpinner(SpinnerType.BallSpinClockwise);
+      this.hideSpinner(SpinnerType.SquareJellyBox);
       this.activatedRoute.queryParams.subscribe(params => {
         const returnUrl: string = params["returnUrl"]
         if (returnUrl) {
@@ -99,7 +99,7 @@ export class RegisterComponent extends BaseComponent implements OnInit {
         position: ToastrPosition.TopRight
       });
     } else {
-      this.hideSpinner(SpinnerType.BallSpinClockwise);
+      this.hideSpinner(SpinnerType.SquareJellyBox);
       this.toastrService.message(resault.message, "Error", {
         messageType: ToastrMessageType.Error,
         position: ToastrPosition.TopRight
