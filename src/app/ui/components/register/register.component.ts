@@ -3,8 +3,10 @@ import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, Validators }
 import { BaseComponent, SpinnerType } from '../../../base/base.component';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { ActivatedRoute, Router } from '@angular/router';
-import { CustomToastrService } from '../../../services/common/custom-toastr.service';
+import { CustomToastrService, ToastrMessageType, ToastrPosition } from '../../../services/common/custom-toastr.service';
 import { UserService } from '../../../services/common/models/user.service';
+import { User } from '../../../entities/user';
+import { Create_User } from '../../../contracts/user/create_user';
 
 @Component({
   selector: 'app-register',
@@ -39,12 +41,12 @@ export class RegisterComponent extends BaseComponent implements OnInit {
         Validators.email]],
       phone: ["", [
         Validators.required,
-        Validators.pattern("^[0-9]{11}$"),]],
+        Validators.pattern("^[0-9]{10}$"),]],
       age: ["", [
         Validators.required,
         Validators.min(18),
         Validators.max(100)]],
-      gander: ["", [
+      gender: ["", [
         Validators.required,]],
       password: ["", [
         Validators.required,
@@ -70,13 +72,38 @@ export class RegisterComponent extends BaseComponent implements OnInit {
     return this.frm.controls;
   }
 
-  async onSubmit() {
+  async onSubmit(user: User) {
     this.submitted = true;
+    user.phone = "0" + user.phone;
+    debugger
     this.showSpinner(SpinnerType.BallSpinClockwise);
 
     if (this.frm.invalid) {
       this.hideSpinner(SpinnerType.BallSpinClockwise);
       return;
+    }
+
+    const resault: Create_User = await this.userService.create(user);
+    if (resault.success) {
+      this.hideSpinner(SpinnerType.BallSpinClockwise);
+      this.activatedRoute.queryParams.subscribe(params => {
+        const returnUrl: string = params["returnUrl"]
+        if (returnUrl) {
+          this.router.navigate([returnUrl]);
+        } else {
+          this.router.navigate(["/login"]);
+        }
+      });
+      this.toastrService.message(resault.message, "Success", {
+        messageType: ToastrMessageType.Success,
+        position: ToastrPosition.TopRight
+      });
+    } else {
+      this.hideSpinner(SpinnerType.BallSpinClockwise);
+      this.toastrService.message(resault.message, "Error", {
+        messageType: ToastrMessageType.Error,
+        position: ToastrPosition.TopRight
+      });
     }
   }
 }

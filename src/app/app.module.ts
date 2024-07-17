@@ -24,6 +24,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AdminModule } from './admin/admin.module';
 import { UiModule } from './ui/ui.module';
 import { ToastrModule } from 'ngx-toastr';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -52,9 +53,11 @@ import { ToastrModule } from 'ngx-toastr';
     BrowserAnimationsModule,
     AdminModule,
     UiModule,
+    HttpClientModule,
   ],
   providers: [
-    provideAnimationsAsync()
+    provideAnimationsAsync(),
+    { provide: "baseUrl", useValue: "https://localhost:7171/api", multi: true },
   ],
   bootstrap: [AppComponent]
 })

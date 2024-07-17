@@ -7,7 +7,7 @@
             <div class="mb-md-5 mt-md-4 pb-5">
               <h2 class="fw-bold mb-2 text-uppercase">Sign Up</h2>
 
-              <form [formGroup]="frm" (ngSubmit)="onSubmit()">       
+              <form [formGroup]="frm" (ngSubmit)="onSubmit(frm.value)">       
           <div class="row">
               <div class="col-6">
                 <div data-mdb-input-init class="form-group form-outline form-white mb-4">
@@ -44,10 +44,10 @@
             <div class="col-6">
               <div data-mdb-input-init class="form-group form-outline form-white mb-4">
                 <label for="phone" class="form-label">Phone Number *</label>
-                <input type="number" onKeyPress="if(this.value.length==11) return false;" inputmode="numeric" id="phone" formControlName="phone" class="form-control form-control-lg" 
+                <input type="number" onKeyPress="if(this.value.length==10) return false;" inputmode="numeric" id="phone" formControlName="phone" class="form-control form-control-lg" 
                 placeholder="Phone Number" [ngClass]="{'is-invalid': submitted && component.phone.errors}"/>
                 <div class="form-text form-text-color" *ngIf="submitted && component.phone.errors?.required">Please don't leave your phone number blank.</div>
-                <div class="form-text form-text-color" *ngIf="submitted && (component.phone.errors?.pattern)">Please enter your 11-digit phone number.</div>
+                <div class="form-text form-text-color" *ngIf="submitted && (component.phone.errors?.pattern)">Please enter your 11-digit phone number without a leading 0.</div>
               </div>
             </div>
           </div>  
@@ -68,14 +68,14 @@
     
             <div class="col-6">
               <div data-mdb-input-init class="form-group form-outline form-white mb-4">
-                <label for="gander" class="form-label">Gender *</label>
-                <select id="gander" formControlName="gander" class="form-control form-control-lg" 
-                [ngClass]="{'is-invalid': submitted && component.gander.errors}">
+                <label for="gender" class="form-label">Gender *</label>
+                <select id="gender" formControlName="gender" class="form-control form-control-lg" 
+                [ngClass]="{'is-invalid': submitted && component.gender.errors}">
                   <option value="">Select Gender</option>
                   <option value="male">Male</option>
                   <option value="female">Female</option>
                 </select>
-                <div class="form-text form-text-color" *ngIf="submitted && component.gander.errors?.required">Please select your gender.</div>
+                <div class="form-text form-text-color" *ngIf="submitted && component.gender.errors?.required">Please select your gender.</div>
               </div>
             </div>
           </div>    
