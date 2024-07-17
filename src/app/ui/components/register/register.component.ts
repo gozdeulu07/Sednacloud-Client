@@ -29,10 +29,6 @@ export class RegisterComponent extends BaseComponent implements OnInit {
         Validators.required,
         Validators.maxLength(50),
         Validators.minLength(3)]],
-      surname: ["", [
-        Validators.required,
-        Validators.maxLength(50),
-        Validators.minLength(3)]],
       username: ["", [
         Validators.required,
         Validators.maxLength(50),
@@ -41,6 +37,15 @@ export class RegisterComponent extends BaseComponent implements OnInit {
         Validators.required,
         Validators.maxLength(250),
         Validators.email]],
+      phone: ["", [
+        Validators.required,
+        Validators.pattern("^[0-9]{11}$"),]],
+      age: ["", [
+        Validators.required,
+        Validators.min(18),
+        Validators.max(100)]],
+      gander: ["", [
+        Validators.required,]],
       password: ["", [
         Validators.required,
         Validators.maxLength(50),
