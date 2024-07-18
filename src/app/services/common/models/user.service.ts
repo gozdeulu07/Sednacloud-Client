@@ -13,7 +13,8 @@ export class UserService {
     private httpClientService: HttpClientService
   ) { }
 
-  async create(user: User): Promise<Create_User> {
+  // Create New User Fuction
+  async createUser(user: User): Promise<Create_User> {
     const observable: Observable<Create_User | User> = this.httpClientService.post<Create_User | User>({
       controller: "users"
     }, user);

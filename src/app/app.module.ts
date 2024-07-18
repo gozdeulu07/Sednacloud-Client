@@ -24,18 +24,20 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AdminModule } from './admin/admin.module';
 import { UiModule } from './ui/ui.module';
 import { ToastrModule } from 'ngx-toastr';
-import { HttpClientModule } from '@angular/common/http';
-import { JwtHelperService, JwtModule } from '@auth0/angular-jwt';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { JwtModule } from '@auth0/angular-jwt';
+import { HttpErrorHandlerInterceptorService } from './services/common/http-error-handler-interceptor.service';
+import { DialogsModule } from './dialogs/dialogs.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     JwtModule.forRoot({
       config: {
         tokenGetter: () => localStorage.getItem("accessToken"),
-        allowedDomains: ["localhost:7066"]
+        allowedDomains: ["localhost:7171"]
       }
     }),
     ToastrModule.forRoot(),
@@ -61,9 +63,11 @@ import { JwtHelperService, JwtModule } from '@auth0/angular-jwt';
     AdminModule,
     UiModule,
     HttpClientModule,
+    DialogsModule,
   ],
   providers: [
     provideAnimationsAsync(),
+    { provide: HTTP_INTERCEPTORS, useClass: HttpErrorHandlerInterceptorService, multi: true },
     { provide: "baseUrl", useValue: "https://localhost:7171/api", multi: true },
   ],
   bootstrap: [AppComponent]

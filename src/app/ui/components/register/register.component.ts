@@ -75,7 +75,6 @@ export class RegisterComponent extends BaseComponent implements OnInit {
   async onSubmit(user: User) {
     this.submitted = true;
     user.phone = "0" + user.phone;
-    debugger
     this.showSpinner(SpinnerType.SquareJellyBox);
 
     if (this.frm.invalid) {
@@ -83,7 +82,7 @@ export class RegisterComponent extends BaseComponent implements OnInit {
       return;
     }
 
-    const resault: Create_User = await this.userService.create(user);
+    const resault: Create_User = await this.userService.createUser(user);
     if (resault.success) {
       this.hideSpinner(SpinnerType.SquareJellyBox);
       this.activatedRoute.queryParams.subscribe(params => {
