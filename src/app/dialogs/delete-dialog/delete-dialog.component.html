@@ -1,0 +1,8 @@
+<h2 mat-dialog-title>Delete?</h2>
+<mat-dialog-content>
+  <p>Are you sure you want to delete this?</p>
+</mat-dialog-content>
+<mat-dialog-actions style="justify-content: center;">
+  <button mat-button [mat-dialog-close]="data">Yes</button>
+  <button mat-button (click)="close()" cdkFocusInitial>No</button>
+</mat-dialog-actions>

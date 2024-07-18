@@ -5,7 +5,8 @@ import { RouterModule } from '@angular/router';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { ListComponent } from './list/list.component';
-
+import { DeleteDirectiveModule } from '../../../directives/admin/delete.directive.module';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 @NgModule({
@@ -20,6 +21,8 @@ import { ListComponent } from './list/list.component';
     CommonModule,
     MatTableModule,
     MatPaginator,
+    DeleteDirectiveModule,
+    MatDialogModule,
   ]
 })
 export class HotelsModule { }
