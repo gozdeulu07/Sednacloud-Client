@@ -7,12 +7,15 @@ import { MatPaginator } from '@angular/material/paginator';
 import { ListComponent } from './list/list.component';
 import { DeleteDirectiveModule } from '../../../directives/admin/delete.directive.module';
 import { MatDialogModule } from '@angular/material/dialog';
-
+import { CreateComponent } from './create/create.component';
+import { MatButtonModule } from '@angular/material/button';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 @NgModule({
   declarations: [
     HotelsComponent,
-    ListComponent
+    ListComponent,
+    CreateComponent
   ],
   imports: [
     RouterModule.forChild([
@@ -23,6 +26,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatPaginator,
     DeleteDirectiveModule,
     MatDialogModule,
+    MatButtonModule,
+    MatToolbarModule,
   ]
 })
 export class HotelsModule { }

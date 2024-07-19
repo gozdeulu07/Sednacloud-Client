@@ -54,14 +54,14 @@ export class DeleteDirective {
               height: "toogle"
             }, 700, () => {
               this.callback.emit();
-              this.toastrService.message(`Selected ${this.controller == 'roles' ? 'role' : 'product'} successfully deleted.`, "Success!", {
+              this.toastrService.message(`Selected hotel successfully deleted.`, "Success!", {
                 messageType: ToastrMessageType.Success,
                 position: ToastrPosition.TopRight
               })
             });
           }, error: (errorResponse: HttpErrorResponse) => {
             this.spinner.hide(SpinnerType.SquareJellyBox);
-            this.toastrService.message("An error occurred while deleting the selected product.", "Error!", {
+            this.toastrService.message("An error occurred while deleting the selected hotel.", "Error!", {
               messageType: ToastrMessageType.Error,
               position: ToastrPosition.TopRight
             });

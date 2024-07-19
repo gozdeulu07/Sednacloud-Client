@@ -1,0 +1,32 @@
+.hotel-detail-table {
+    width: 100%;
+  }
+  
+  .mat-mdc-row .mat-mdc-cell {
+    border-bottom: 1px solid transparent;
+    border-top: 1px solid transparent;
+    cursor: pointer;
+  }
+  
+  .mat-mdc-row:hover .mat-mdc-cell {
+    border-color: currentColor;
+  }
+ 
+  .hotel-detail-row-is-clicked {
+    font-weight: bold;
+  }
+
+  .toolbar-spacer {
+    flex: 1 1 auto;
+  }
+
+  .hotel-extra-detail {
+    max-width: 1000px;
+    padding-top: 20px; 
+    color: black;
+    word-wrap: break-word;
+  }
+
+  .th-td-custom {
+    text-align: center;
+  }

@@ -1,0 +1,53 @@
+<div class="container">
+    <div class="row" style="margin: 30px;">
+        
+        <div class="column col-6" style="width: 240px;">
+            <p class="col-4 col-sm">
+                <mat-form-field appearance="fill">
+                  <mat-label>Name</mat-label>
+                  <input matInput #txtName placeholder="Name">
+                </mat-form-field>
+            </p>
+            
+            <p class="col-4 col-sm">
+                <mat-form-field appearance="fill">
+                  <mat-label>Phone</mat-label>
+                  <input class="input-custom" type="number" onKeyPress="if(this.value.length==11) return false;" inputmode="numeric" matInput #txtPhone placeholder="Phone">
+                </mat-form-field>
+            </p>
+            
+            <p class="col-4 col-sm">
+                <mat-form-field appearance="fill">
+                  <mat-label>Email</mat-label>
+                  <input matInput #txtEmail type="email" placeholder="Email">
+                </mat-form-field>
+            </p>
+        </div>
+
+        <div class="column col-6" style="width: 240px;">
+            <p class="col-4 col-sm">
+                <mat-form-field appearance="fill">
+                  <mat-label>Address</mat-label>
+                  <input matInput #txtAddress placeholder="Address">
+                </mat-form-field>
+            </p>
+            
+            <p class="col-4 col-sm">
+                <mat-form-field appearance="fill">
+                  <mat-label>Description</mat-label>
+                  <input matInput #txtDescription placeholder="Description">
+                </mat-form-field>
+            </p>
+            
+            <p class="col-4 col-sm">
+                <mat-form-field appearance="fill">
+                  <mat-label>Star</mat-label>
+                  <input type="number" min="0" max="5" value="0" matInput #txtStar placeholder="Star">
+                </mat-form-field>
+            </p>
+        </div>
+
+        <button mat-raised-button color="primary" (click)="create(txtName, txtEmail, txtPhone, txtAddress, txtDescription, txtStar)">Create New Hotel</button>
+    
+    </div>
+</div>

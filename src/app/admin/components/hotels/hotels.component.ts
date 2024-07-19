@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { BaseComponent } from '../../../base/base.component';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { CustomToastrService } from '../../../services/common/custom-toastr.service';
+import { ListComponent } from './list/list.component';
 
 @Component({
   selector: 'app-hotels',
@@ -13,6 +14,9 @@ export class HotelsComponent extends BaseComponent {
     super(spinner);
   }
 
+  @ViewChild(ListComponent) listComponents: ListComponent;
 
-
+  newHotelCreated() {
+    this.listComponents.getHotels();
+  }
 }
