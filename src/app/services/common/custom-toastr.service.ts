@@ -14,6 +14,7 @@ export class CustomToastrService {
       progressBar: true,
       closeButton: true,
       timeOut: 1500,
+      
     });
     this.toastr.toastrConfig.preventDuplicates = true;
   }

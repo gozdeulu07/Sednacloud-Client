@@ -6,6 +6,8 @@ import { MatTableDataSource } from '@angular/material/table';
 import { List_Hotel } from '../../../../contracts/hotel/list_hotel';
 import { HotelService } from '../../../../services/common/models/hotel.service';
 import { CustomToastrService, ToastrMessageType, ToastrPosition } from '../../../../services/common/custom-toastr.service';
+import { HotelDetailDialogComponent } from '../../../../dialogs/hotel-detail-dialog/hotel-detail-dialog.component';
+import { DialogService } from '../../../../services/common/models/dialog.service';
 
 @Component({
   selector: 'app-list',
@@ -17,12 +19,13 @@ export class ListComponent extends BaseComponent {
     spinner: NgxSpinnerService,
     private hotelService: HotelService,
     private toastrService: CustomToastrService,
+    private dialogService: DialogService,
   ) {
     super(spinner);
   }
 
-  displayedColumns: string[] = ['name', 'address', 'phone', 'email', 'star', 'photos', 'edit', 'delete'];
-  dataSource: MatTableDataSource<List_Hotel> = null
+  displayedColumns: string[] = ['name', 'phone', 'email', 'star', 'viewDetail', 'edit', 'delete'];
+  dataSource: MatTableDataSource<List_Hotel>
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
   async getHotels() {
@@ -41,14 +44,14 @@ export class ListComponent extends BaseComponent {
     this.paginator.length = allHotels.totalCount;
   }
 
-  addProductImages(id: string) {
-    // this.dialogService.openDialog({
-    //   componentType: SelectProductImageDialogComponent,
-    //   data: id,
-    //   options: {
-    //     width: "1400px"
-    //   }
-    // });
+  showDetail(id: string) {
+    this.dialogService.openDialog({
+      componentType: HotelDetailDialogComponent,
+      data: id,
+      options: {
+        width: "1050px"
+      }
+    });
   }
 
   async pageChanged() {
