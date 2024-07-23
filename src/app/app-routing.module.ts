@@ -13,16 +13,18 @@ const routes: Routes = [
     ], canActivate: [authGuard]
   },
   { path: "", component: HomeComponent },
+  { path: "hotels", loadChildren: () => import("./ui/components/hotels/hotels.module").then(module => module.HotelsModule) },
+  { path: "hotels/:pageNo", loadChildren: () => import("./ui/components/hotels/hotels.module").then(module => module.HotelsModule) },
   { path: "login", loadChildren: () => import("./ui/components/login/login.module").then(module => module.LoginModule) },
   { path: "register", loadChildren: () => import("./ui/components/register/register.module").then(module => module.RegisterModule) },
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
   ],
   exports: [
-    RouterModule
+    RouterModule,
   ]
 })
 export class AppRoutingModule { }

@@ -8,7 +8,7 @@ import { ComponentsModule } from '../admin/layout/components/components.module';
   declarations: [],
   imports: [
     CommonModule,
-    ComponentsModule
+    ComponentsModule,
   ]
 })
 export class UiModule { }
