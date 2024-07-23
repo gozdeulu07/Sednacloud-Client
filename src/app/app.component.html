@@ -10,10 +10,10 @@
 
       <!-- Search form -->
       <form class="input-group w-auto my-auto d-none d-sm-flex">
-        <input autocomplete="off" type="search"  class="form-control rounded" placeholder="Search" style="min-width: 125px"/>
-        <span class="input-group-text border-0 d-none d-lg-flex"
-          ><i class="fas fa-search"></i
-        ></span>
+        <input autocomplete="off" type="search" class="form-control rounded" placeholder="Search" style="min-width: 125px"/>
+        <span class="input-group-text border-0 d-none d-lg-flex">
+          <i class="fas fa-search"></i>
+        </span>
       </form>
     </div>
     <!-- Left elements -->
@@ -23,6 +23,12 @@
       <li class="nav-item me-3 me-lg-1 active">
         <a class="nav-link" routerLink="">
           <span><i class="fas fa-home fa-lg"></i></span>
+        </a>
+      </li>
+
+      <li class="nav-item me-3 me-lg-1 active">
+        <a class="nav-link" routerLink="hotels">
+          <span><i class="fa-solid fa-hotel"></i></span>
         </a>
       </li>
 
@@ -48,7 +54,7 @@
         </a>
       </li>
       <li class="nav-item me-3 me-lg-1">
-        <a class="nav-link d-sm-flex align-items-sm-center" routerLink="login"  *ngIf="!authService.isAuthenticated">
+        <a class="nav-link d-sm-flex align-items-sm-center" routerLink="login" *ngIf="!authService.isAuthenticated">
           <strong class="d-none d-sm-block ms-1">Login</strong>
           <span class="li-ico"><i class="fa-solid fa-right-to-bracket"></i></span>
         </a>
@@ -72,11 +78,13 @@
 <!-- Navbar -->
 
 <!-- Main Content -->
-<router-outlet></router-outlet>
+<div class="content">
+  <router-outlet></router-outlet>
+</div>
 
-<ngx-spinner size="medium" name="s1" type="ball-spin-clockwise-fade"
-  ><p style="color: white">Loading...</p></ngx-spinner
->
-<ngx-spinner size="medium" name="s2" type="square-jelly-box"
-  ><p style="color: white">Loading...</p></ngx-spinner
->
+<ngx-spinner size="medium" name="s1" type="ball-spin-clockwise-fade">
+  <p style="color: white">Loading...</p>
+</ngx-spinner>
+<ngx-spinner size="medium" name="s2" type="square-jelly-box">
+  <p style="color: white">Loading...</p>
+</ngx-spinner>
