@@ -22,8 +22,6 @@ export class HttpErrorHandlerInterceptorService extends BaseComponent implements
   }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    console.log("abc");
-
     return next.handle(req).pipe(catchError(error => {
       switch (error.status) {
         case HttpStatusCode.Unauthorized:

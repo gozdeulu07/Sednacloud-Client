@@ -20,9 +20,7 @@ export class HotelDetailDialogComponent extends BaseDialog<HotelDetailDialogComp
 
   constructor(
     private hotelService: HotelService,
-    private dialogService: DialogService,
     private spinner: NgxSpinnerService,
-    private toastrService: CustomToastrService,
     dialogRef: MatDialogRef<HotelDetailDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: string,
   ) {
@@ -38,6 +36,7 @@ export class HotelDetailDialogComponent extends BaseDialog<HotelDetailDialogComp
     this.spinner.show(SpinnerType.SquareJellyBox);
     this.singleHotel = await this.hotelService.getHotelById(this.data as string);
     this.dataSource = new MatTableDataSource<any>([this.singleHotel]);
+    debugger
     this.spinner.hide(SpinnerType.SquareJellyBox);
   }
 }

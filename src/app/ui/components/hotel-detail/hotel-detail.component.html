@@ -1,0 +1,68 @@
+<div class="row">
+
+    <div class="col-md-1"></div>
+
+        <div class="col-md-10">
+
+<div class="main_grid" *ngIf="singleHotel">
+    <div class="main_card" style="margin-top: 50px;">
+        <img src="../../../../assets/images/default-hotel-detail.jpg" alt="popular hotel" />
+        <div class="popular__content">
+            <div class="main_card_header">
+                <h2>{{singleHotel.name}}</h2>
+                <div class="star-rating">
+                    <span class="icon" style="font-size: 18px;" *ngFor="let star of getStarArray()">
+                        <i class="bi bi-star-fill" style="color: yellow;"></i>
+                    </span> <br><br>
+                </div>
+                <div>
+                    <p>{{singleHotel.description}}</p>
+                </div>
+            </div>
+            <div>
+                <p><i class="bi bi-geo-alt-fill"></i> {{singleHotel.address}}</p>
+                <p><i class="bi bi-envelope-fill"></i> {{singleHotel.email}}</p>
+                <p><i class="bi bi-telephone-fill"></i> {{singleHotel.phone}}</p>
+            </div>
+           
+              
+            <!-- <div class="star-rating" style="padding-bottom: 15px;">
+                <span class="icon">
+                    <i class="bi bi-star-fill" style="color: yellow;"></i>
+                </span>
+            </div> -->
+        </div>
+    </div>
+</div>
+
+<section class="section__container popular__container">
+    <h2 class="section__header" style="padding-top: 40px; font-size: 40px;">Room Types</h2>
+    <div class="popular__grid">
+        
+        <div class="popular__card">
+            <img src="../../../../assets/images/default-room-type.jpg" width="400" height="400" alt="popular hotel" />
+            <div class="popular__content">
+            
+                <div class="room-details">
+                    <div class="room-title">
+                        <h3>Standard Oda</h3>
+                        <br>
+                    </div>
+                    <div class="refund-deadline">23 Temmuz Sal tarihinden önce</div>
+                    
+                </div>
+            </div>
+            <span class="price" style="margin-left: 340px;">1300$</span>
+            <button class="reservation-btn" routerLink="/reservation" target="_blank">Make a reservation</button>
+
+
+        </div>
+
+    </div>
+</section>
+
+        </div>
+
+    <div class="col-md-1"></div>
+
+</div>

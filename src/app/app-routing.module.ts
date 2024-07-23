@@ -14,6 +14,7 @@ const routes: Routes = [
   },
   { path: "", component: HomeComponent },
   { path: "hotels", loadChildren: () => import("./ui/components/hotels/hotels.module").then(module => module.HotelsModule) },
+  { path: "hotels/:hotelName/detail/:hotelId", loadChildren: () => import("./ui/components/hotel-detail/hotel-detail.module").then(module => module.HotelDetailModule) },
   { path: "hotels/:pageNo", loadChildren: () => import("./ui/components/hotels/hotels.module").then(module => module.HotelsModule) },
   { path: "login", loadChildren: () => import("./ui/components/login/login.module").then(module => module.LoginModule) },
   { path: "register", loadChildren: () => import("./ui/components/register/register.module").then(module => module.RegisterModule) },
