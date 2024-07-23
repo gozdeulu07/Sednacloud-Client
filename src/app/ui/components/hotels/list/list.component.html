@@ -1,49 +1,37 @@
 <div class="popular__grid">
-
-    
+   
     <div class="popular__card" *ngFor="let hotel of hotels">
-
-        <img src="../../../../../assets/default-hotel.jpg" height="300"
+        <img src="../../../../../assets/images/default-hotel.jpg" height="300"
             alt="popular hotel" />
 
         <div class="popular__content">
 
             <div class="popular__card__header">
-
                 <h4 class="line-fixer">{{hotel.name}}</h4>
-
                 <div class="star-rating">
-                    <span class="icon">
+                    <span class="icon" *ngFor="let star of getStarArray(hotel)">
                         <i class="bi bi-star-fill"></i>
-                    </span> 
-
+                    </span>
                     <br>
-                    <br>
-                    
+                    <br>   
                 </div>
-
             </div>
             
             <p><i class="bi bi-geo-alt-fill"></i> {{hotel.address}}</p>
 
             <div class="star-rating">
-
                 <span class="icon">
                     <i class="bi bi-star-fill"></i>
                 </span>
-
-                <span class="rating-score">6.1 (88k)</span>
-                
+                <span class="rating-score">{{hotel.starRaiting}} (88k)</span>
             </div>
 
         </div>
+        <button class="details-btn " routerLink="/hotels/{{hotel.name}}/detail/{{hotel.id}}" target="_blank">Details</button>
         
-        <button class="details-btn " routerLink="/details" target="_blank">Details</button>
-    
     </div>
 
 </div>
-
 
 <nav>
     <ul class="pagination pagination-container">

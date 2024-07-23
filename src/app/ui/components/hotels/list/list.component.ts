@@ -40,7 +40,6 @@ export class ListComponent extends BaseComponent implements OnInit {
 
         this.hotels = data.hotels;
 
-
         this.totalProductCount = data.totalCount;
         this.totalPageCount = Math.ceil(data.totalCount / this.pageSize);
         this.pageList = []
@@ -62,7 +61,9 @@ export class ListComponent extends BaseComponent implements OnInit {
 
       }
     });
-
   }
 
+  getStarArray(hotel: List_Hotel): number[] {
+    return Array(hotel.star || 0).fill(0);
+  }
 }

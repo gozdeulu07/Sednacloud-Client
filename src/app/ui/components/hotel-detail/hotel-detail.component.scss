@@ -1,0 +1,357 @@
+// Detay butonlarının stili
+
+.popular__grid {
+  margin-top: 10rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.popular__card:hover {
+  transform: scale(1.1);
+}
+
+.popular__card {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  border-radius: 1rem;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  transition: 0.4s;
+}
+
+.popular__content {
+  padding: 20px;
+}
+
+.popular__card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.reservation-btn {
+  padding: 8px 12px; // Buton içeriğinin iç boşluğu
+  font-size: 14px; // Yazı boyutu
+  border: none; // Kenarlık yok
+  border-radius: 20px; // Yuvarlak kenarlık
+  background-color: #f0ece6; // Arka plan rengi (ten rengi)
+  color: #333; // Yazı rengi
+  cursor: pointer; // İmleç türü: işaretçi
+  transition: background-color 0.3s ease; // Geçiş efekti: arka plan rengi
+
+  &:hover {
+    background-color: #e0dcd6; // Buton üzerine gelindiğinde arka plan rengi değişimi
+  }
+}
+.price-info {
+  // position: absolute; // Absolute positioning within the .popular__card container
+  position: fixed;
+  bottom: 50px; // 10 pixels from the bottom
+  right: 10px; // 10 pixels from the right
+  background-color: rgba(255, 255, 255, 0.8); // Semi-transparent background
+  padding: 5px 10px; // Padding around the text
+  border-radius: 5px; // Rounded corners
+  font-size: 1.2em; // Slightly larger font size
+  font-weight: bold; // Bold text
+  color: #333; // Dark text color
+}
+
+.main_card {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 1rem;
+  width: 1100px;
+  transition: 0.4s;
+  margin: 0; /* Varsayılan kenar boşluğunu kaldır */
+  overflow: hidden;
+  background-color: #fff; /* İsteğe bağlı: Arka plan rengi ekleyin */
+  position: relative;
+}
+
+.main_grid {
+  margin-top: 50px;
+  display: flex; /* Flexbox kullanarak ortalamak için */
+  justify-content: center; /* Yatayda ortalar */
+  align-items: center; /* Dikeyde ortalar */
+  width: 100%; /* Gridin tam genişlikte olmasını sağlar */
+  height: 75vh; /* Gridin tam ekran yüksekliğinde olmasını sağlar */
+}
+
+.main_card img {
+  width: 100%;
+  height: 550px; /* Maintain aspect ratio */
+  object-fit: cover; /* Ensures the image covers the container */
+}
+
+.main_card_header h2 {
+  font-size: 35px;
+  margin: 10px;
+}
+
+.main_card_header p {
+  font-size: 20px;
+  padding-bottom: 20px;
+}
+
+.star-rating {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: -25px;
+}
+
+.section__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* İçeriği yatayda ortalamak için */
+  justify-content: center; /* İçeriği dikeyde ortalamak için */
+  min-height: 100vh; /* Tam ekran yüksekliği */
+  padding: 20px; /* İsteğe bağlı: Kenar boşluğu */
+
+  .main_grid {
+    position: relative;
+  }
+
+  .main_card {
+    position: relative;
+  }
+
+  .popular__content {
+    position: relative;
+    padding-bottom: 30px;
+  }
+}
+
+.uitk-icon {
+  height: 1cm;
+  width: 1cm;
+}
+
+.uitk-layout-grid {
+  &.uitk-layout-grid-has-auto-columns {
+    --uitk-layoutgrid-auto-columns: minmax(
+      var(--uitk-layoutgrid-egds-size__0x),
+      1fr
+    );
+  }
+
+  &.uitk-layout-grid-has-columns {
+    --uitk-layoutgrid-columns: repeat(1, minmax(0, 1fr));
+  }
+
+  &.uitk-layout-grid-has-space {
+    --uitk-layoutgrid-column-gap: var(--uitk-layoutgrid-space-three);
+    --uitk-layoutgrid-row-gap: var(--uitk-layoutgrid-space-three);
+  }
+
+  &.uitk-layout-grid-display-grid {
+    display: grid;
+  }
+}
+
+.uitk-typelist {
+  &-orientation-stacked {
+    flex-direction: column;
+  }
+
+  &-size-2 {
+    font-size: 16px;
+  }
+
+  &-item {
+    &-bullet-none {
+      list-style-type: none;
+    }
+
+    &-orientation-stacked {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &-size-2 {
+      font-size: 16px;
+    }
+
+    &-default-theme {
+      color: #333;
+    }
+
+    &-indent {
+      padding-left: 20px;
+    }
+
+    &-no-indent {
+      padding-left: 0;
+    }
+  }
+}
+
+.uitk-layout-flex {
+  &-align-items-center {
+    align-items: center;
+  }
+
+  &-block-size-full-size {
+    width: 100%;
+  }
+
+  &-item {
+    flex: 1;
+  }
+}
+
+.uitk-text {
+  &.uitk-type-300 {
+    font-weight: 300;
+  }
+
+  &-default-theme {
+    color: #333;
+  }
+}
+
+.uitk-icon {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+
+.room-details {
+  .room-title {
+    h3 {
+      font-size: 1.5rem; // Başlık boyutu
+      margin: 0;
+      padding-bottom: 0.5rem;
+    }
+  }
+
+  .room-rating {
+    font-size: 1rem;
+    color: #777; // Derece rengi
+    margin-bottom: 1rem;
+  }
+
+  .room-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      display: flex;
+      align-items: center;
+      font-size: 0.875rem;
+      margin-bottom: 0.5rem;
+      color: #333;
+
+      .icon {
+        width: 1.5rem;
+        height: 1.5rem;
+        margin-right: 0.5rem;
+        fill: #007bff; // Simge rengi
+      }
+
+      .loyalty-icon {
+        width: 1.5rem;
+        height: 1.5rem;
+        margin-right: 0.5rem;
+      }
+    }
+  }
+
+  .refund-info {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+
+    button {
+      display: flex;
+      align-items: center;
+      background: transparent;
+      border: none;
+      color: #007bff;
+      font-size: 0.875rem;
+      cursor: pointer;
+      padding: 0;
+      margin-bottom: 0.5rem;
+
+      .icon {
+        width: 1rem;
+        height: 1rem;
+        margin-left: 0.5rem;
+      }
+    }
+
+    .refund-deadline {
+      font-size: 0.75rem;
+      color: #666;
+    }
+  }
+
+  .more-details {
+    margin-top: 1rem;
+
+    button {
+      display: flex;
+      align-items: center;
+      background: transparent;
+      border: none;
+      color: #007bff;
+      font-size: 0.875rem;
+      cursor: pointer;
+      padding: 0;
+
+      .icon {
+        width: 1rem;
+        height: 1rem;
+        margin-left: 0.5rem;
+      }
+    }
+  }
+}
+
+.price {
+  right: 30px !important;
+  bottom: 10px !important;
+  font-size: 1.2em;
+  font-weight: bold;
+  padding-bottom: 20px;
+}
+
+.features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  margin-bottom: 8px; // Liste öğeleri arasına boşluk ekler
+}
+
+.feature-content {
+  display: flex;
+  align-items: center;
+}
+
+.feature-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+  fill: #333;
+}
+
+.feature-text {
+  font-size: 16px;
+  color: #333;
+}
