@@ -5,7 +5,7 @@ export class List_Hotel {
     phone: string;
     email: string;
     descrpition: string;
-    starRaiting: number;
+    starRating: number;
     star: number;
     imageUrl: string;
 }

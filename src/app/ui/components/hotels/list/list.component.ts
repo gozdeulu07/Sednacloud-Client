@@ -44,6 +44,8 @@ export class ListComponent extends BaseComponent implements OnInit {
         this.totalPageCount = Math.ceil(data.totalCount / this.pageSize);
         this.pageList = []
 
+        debugger 
+
         if (this.currentPageNo - 3 <= 0) {
           for (let i = 1; i <= 7; i++)
             this.pageList.push(i);
